@@ -11,11 +11,11 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var Image: UIImageView!
     
-    @IBOutlet weak var FirstPriceTextField: UITextField!
+    @IBOutlet weak var FirstPriceLabel: UILabel!
     
-    @IBOutlet weak var SecondPriceTextField: UITextField!
+    @IBOutlet weak var SecondPriceLabel: UILabel!
     
-    @IBOutlet weak var NameWearTextField: UITextField!
+    @IBOutlet weak var NameWearLabel: UILabel!
     
     @IBOutlet weak var DiscountTextField: UILabel!
 }
