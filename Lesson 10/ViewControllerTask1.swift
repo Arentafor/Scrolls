@@ -8,41 +8,27 @@
 import UIKit
 struct shopingstruct {
     
-    struct imagestruct {
-        var image = ["1","2","3","4","5","6"]
-    }
-
-    struct firstpricestruct {
-        var firstprice = ["10990","9990", "3990", "6990", "5990", "2990"]
-    }
-
-    struct secondpricestruct {
-        var secondprice = ["7990", "5990", "2490","4990", "5290","1990"]
-    }
-
-    struct discondstruct {
-        var discound = ["-20%", "-40%", "-30%", "-35%", "-10%","-20%"]
-    }
-
-    struct namewearstruct {
-        var namewear = ["Спортивный костюм","Футболка","Спортивный костюм","Футболка","Футболка","Футболка"]
-    }
+    var image: String
+    var firstprice:String
+    var secondprice:String
+    var discound:String
+    var namewear:String
 }
-var im = shopingstruct.imagestruct.init()
-var fi = shopingstruct.firstpricestruct.init()
-var se = shopingstruct.secondpricestruct.init()
-var di = shopingstruct.discondstruct.init()
-var na = shopingstruct.namewearstruct.init()
 
 class ViewControllerTask1: UIViewController {
     
     
+    let data = [
+                shopingstruct(image: "1", firstprice: "10990", secondprice: "7990", discound: "-20%", namewear: "Спортивный костюм"),
+                shopingstruct(image: "2", firstprice: "9990", secondprice: "5990", discound: "-40%", namewear: "Футболка"),
+                shopingstruct(image: "3", firstprice: "3990", secondprice: "2490", discound: "-30%", namewear: "Спортивный костюм"),
+                shopingstruct(image: "4", firstprice: "6990", secondprice: "4990", discound: "-35%", namewear: "Футболка"),
+                shopingstruct(image: "5", firstprice: "5990", secondprice: "5290", discound: "-10%", namewear: "Футболка"),
+                shopingstruct(image: "6", firstprice: "2990", secondprice: "1990", discound: "-20%", namewear: "Футболка")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
 }
 extension ViewControllerTask1 : UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
     
@@ -52,18 +38,17 @@ extension ViewControllerTask1 : UICollectionViewDelegateFlowLayout,UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return im.image.count
+        return data.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Celll", for: indexPath) as! CollectionViewCell
         cell.Image.image = UIImage(named: "\(indexPath.row + 1)")
-        cell.FirstPriceTextField.text = fi.firstprice[indexPath.row]
-        //cell.FirstPriceTextField. = UIColor.red
-        cell.SecondPriceTextField.text = se.secondprice[indexPath.row]
-        cell.DiscountTextField.text = di.discound[indexPath.row]
-        cell.NameWearTextField.text = na.namewear[indexPath.row]
+        cell.FirstPriceLabel.text = data[indexPath.row].firstprice
+        cell.SecondPriceLabel.text = data[indexPath.row].secondprice
+        cell.DiscountTextField.text = data[indexPath.row].discound
+        cell.NameWearLabel.text = data[indexPath.row].namewear
         return cell
     }
     
