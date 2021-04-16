@@ -17,7 +17,6 @@ struct shopingstruct {
 
 class ViewControllerTask1: UIViewController {
     
-    
     let data = [
                 shopingstruct(image: "1", firstprice: "10990", secondprice: "7990", discound: "-20%", namewear: "Спортивный костюм"),
                 shopingstruct(image: "2", firstprice: "9990", secondprice: "5990", discound: "-40%", namewear: "Футболка"),
@@ -26,9 +25,6 @@ class ViewControllerTask1: UIViewController {
                 shopingstruct(image: "5", firstprice: "5990", secondprice: "5290", discound: "-10%", namewear: "Футболка"),
                 shopingstruct(image: "6", firstprice: "2990", secondprice: "1990", discound: "-20%", namewear: "Футболка")]
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 }
 extension ViewControllerTask1 : UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
     
@@ -47,7 +43,7 @@ extension ViewControllerTask1 : UICollectionViewDelegateFlowLayout,UICollectionV
         cell.Image.image = UIImage(named: "\(indexPath.row + 1)")
         cell.FirstPriceLabel.text = data[indexPath.row].firstprice
         cell.SecondPriceLabel.text = data[indexPath.row].secondprice
-        cell.DiscountTextField.text = data[indexPath.row].discound
+        cell.DiscountLabel.text = data[indexPath.row].discound
         cell.NameWearLabel.text = data[indexPath.row].namewear
         return cell
     }

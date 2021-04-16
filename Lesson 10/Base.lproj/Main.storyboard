@@ -110,6 +110,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="262" height="425"/>
                                         <connections>
+                                            <outlet property="DiscountLabel" destination="zLL-j0-mNH" id="4dp-yd-Zn6"/>
                                             <outlet property="DiscountTextField" destination="zLL-j0-mNH" id="955-dh-84H"/>
                                             <outlet property="FirstPriceLabel" destination="6cS-W7-RjN" id="FnQ-70-bYr"/>
                                             <outlet property="Image" destination="sDS-Ds-OxK" id="YAG-3x-K9P"/>

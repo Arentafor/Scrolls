@@ -16,6 +16,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var SecondPriceLabel: UILabel!
     
     @IBOutlet weak var NameWearLabel: UILabel!
-    
-    @IBOutlet weak var DiscountTextField: UILabel!
+
+    @IBOutlet weak var DiscountLabel: UILabel!
 }
