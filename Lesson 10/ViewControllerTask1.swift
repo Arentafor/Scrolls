@@ -15,6 +15,7 @@ struct shopingstruct {
     var namewear:String
 }
 
+
 class ViewControllerTask1: UIViewController {
     
     let data = [
@@ -38,13 +39,12 @@ extension ViewControllerTask1 : UICollectionViewDelegateFlowLayout,UICollectionV
         
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Celll", for: indexPath) as! CollectionViewCell
-        cell.Image.image = UIImage(named: "\(indexPath.row + 1)")
-        cell.FirstPriceLabel.text = data[indexPath.row].firstprice
-        cell.SecondPriceLabel.text = data[indexPath.row].secondprice
-        cell.DiscountLabel.text = data[indexPath.row].discound
-        cell.NameWearLabel.text = data[indexPath.row].namewear
+       
+        cell.initcell(item: data[indexPath.row])
+        
         return cell
     }
     

@@ -9,13 +9,30 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var Image: UIImageView!
+    @IBOutlet weak var discountLabel: UILabel!
     
-    @IBOutlet weak var FirstPriceLabel: UILabel!
+    @IBOutlet weak var firstLabel: UILabel!
     
-    @IBOutlet weak var SecondPriceLabel: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
     
-    @IBOutlet weak var NameWearLabel: UILabel!
-
-    @IBOutlet weak var DiscountLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var image: UIImageView!
+    
+    func initcell (item: shopingstruct) {
+        image.image = UIImage(named: item.image)
+        firstLabel.text = item.firstprice
+        
+        let attributedText : NSMutableAttributedString =  NSMutableAttributedString(string: firstLabel.text!)
+                    attributedText.addAttributes([
+                        NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue,
+                        NSAttributedString.Key.strikethroughColor: UIColor.black,
+                    ], range: NSMakeRange(0, attributedText.length))
+        firstLabel.attributedText = attributedText
+        
+        secondLabel.text = item.secondprice
+        discountLabel.text = item.discound
+        nameLabel.text = item.namewear
+    }
 }
+
